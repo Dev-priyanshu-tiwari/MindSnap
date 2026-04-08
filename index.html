@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MindSnap — Quiz App</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Grid lines background -->
+  <div class="grid-bg"></div>
+
+  <div class="app" id="app">
+
+    <!-- ==================== SCREEN 1: HOME ==================== -->
+    <div class="screen active" id="screenHome">
+      <div class="home-inner">
+        <div class="brand-tag">● QUIZ MODE</div>
+        <h1 class="home-title">Mind<em>Snap</em></h1>
+        <p class="home-sub">Test your knowledge across tech, science & general trivia. 10 questions. 20 seconds each. No mercy.</p>
+
+        <div class="category-grid">
+          <button class="cat-btn active" data-cat="mixed">⚡ Mixed</button>
+          <button class="cat-btn" data-cat="tech">💻 Tech</button>
+          <button class="cat-btn" data-cat="science">🔬 Science</button>
+          <button class="cat-btn" data-cat="general">🌍 General</button>
+        </div>
+
+        <div class="difficulty-row">
+          <span class="diff-label">Difficulty:</span>
+          <button class="diff-btn active" data-diff="easy">Easy</button>
+          <button class="diff-btn" data-diff="medium">Medium</button>
+          <button class="diff-btn" data-diff="hard">Hard</button>
+        </div>
+
+        <button class="start-btn" id="startBtn">
+          <span>Start Quiz</span>
+          <span class="btn-arrow">→</span>
+        </button>
+
+        <div class="home-stats">
+          <div class="hs"><span id="hsScore">—</span><small>Best Score</small></div>
+          <div class="hs"><span id="hsStreak">—</span><small>Best Streak</small></div>
+          <div class="hs"><span id="hsTotalPlayed">—</span><small>Played</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SCREEN 2: QUIZ ==================== -->
+    <div class="screen" id="screenQuiz">
+      <div class="quiz-header">
+        <div class="q-meta">
+          <span class="q-num" id="qNum">Q1</span>
+          <span class="q-cat-tag" id="qCatTag">Tech</span>
+        </div>
+        <div class="quiz-top-right">
+          <div class="score-live">Score: <strong id="liveScore">0</strong></div>
+          <div class="streak-badge" id="streakBadge">🔥 0</div>
+        </div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <!-- Timer ring -->
+      <div class="timer-wrap">
+        <svg class="timer-svg" viewBox="0 0 80 80">
+          <circle class="timer-bg" cx="40" cy="40" r="34"/>
+          <circle class="timer-ring" id="timerRing" cx="40" cy="40" r="34"/>
+        </svg>
+        <span class="timer-text" id="timerText">20</span>
+      </div>
+
+      <!-- Question -->
+      <div class="question-card" id="questionCard">
+        <p class="question-text" id="questionText">Loading question…</p>
+      </div>
+
+      <!-- Options -->
+      <div class="options-grid" id="optionsGrid"></div>
+
+      <!-- Feedback -->
+      <div class="feedback-bar" id="feedbackBar"></div>
+    </div>
+
+    <!-- ==================== SCREEN 3: RESULTS ==================== -->
+    <div class="screen" id="screenResult">
+      <div class="result-inner">
+        <div class="result-emoji" id="resultEmoji">🎉</div>
+        <h2 class="result-title" id="resultTitle">Quiz Complete!</h2>
+        <div class="result-score-ring">
+          <svg viewBox="0 0 120 120">
+            <circle class="rs-bg" cx="60" cy="60" r="50"/>
+            <circle class="rs-fill" id="rsCircle" cx="60" cy="60" r="50"/>
+          </svg>
+          <div class="rs-inner">
+            <span class="rs-num" id="rsNum">—</span>
+            <span class="rs-label">/ 10</span>
+          </div>
+        </div>
+
+        <div class="result-stats">
+          <div class="rs-stat"><span id="rsPct">—</span><small>Accuracy</small></div>
+          <div class="rs-stat"><span id="rsTime">—</span><small>Avg Time</small></div>
+          <div class="rs-stat"><span id="rsStreak">—</span><small>Best Streak</small></div>
+        </div>
+
+        <div class="result-breakdown" id="resultBreakdown"></div>
+
+        <div class="result-actions">
+          <button class="action-btn primary" id="retryBtn">Try Again ↺</button>
+          <button class="action-btn ghost" id="homeBtn">Home ⌂</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- .app -->
+
+  <script src="script.js"></script>
+</body>
+</html>
