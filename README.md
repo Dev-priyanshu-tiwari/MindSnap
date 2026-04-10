@@ -4,6 +4,7 @@ A dark, sleek interactive quiz app built with **HTML, CSS & Vanilla JavaScript**
 
 > Lets Play !!
 
+Test NOW -  https://dev-priyanshu-tiwari.github.io/MindSnap/
 ---
 
 ## ✨ Features
